@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>History Data</title>
+</head>
+<body>
+    <h1>Sensor Data History</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Temperature</th>
+                <th>Humidity</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in history %}
+                <tr>
+                    <td>{{ row.id }}</td>
+                    <td>{{ row.temperature }}</td>
+                    <td>{{ row.humidity }}</td>
+                    <td>{{ row.timestamp }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
