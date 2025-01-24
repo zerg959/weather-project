@@ -6,17 +6,17 @@ import time
 import ujson
 
 # WiFi credentials
-SSID = "YOUR_WIFI_SSID"
-PASSWORD = "YOUR_WIFI_PASSWORD"
+SSID = "zerg959_old"
+PASSWORD = "Kaizer@2008"
 
 # Flask server URL
-SERVER_URL = "http://YOUR_FLASK_SERVER_IP:5000/receive_data" # Замените на IP адрес вашего сервера
+SERVER_URL = "http://192.168.1.195/receive_data" # Замените на IP адрес вашего сервера
 
 # DHT22 pin (настройте согласно вашему подключению)
-DHT_PIN = 4 
+DHT_PIN = 15 
 
 # Create DHT22 object
-d = dht.DHT22(machine.Pin(DHT_PIN))
+d = dht.DHT11(machine.Pin(DHT_PIN))
 
 # Connect to WiFi
 def connect_wifi():

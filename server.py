@@ -15,21 +15,21 @@ def index():
 def receive_data():
     global latest_data
     try:
-      data = request.get_json()
-      if data and 'temperature' in data and 'humidity' in data:
-        latest_data = data
-        print("Received data:", data)
-        return "Data received!", 200
-      else:
-        print("Invalid data received")
-        return "Invalid data", 400
+        data = request.get_json()
+        if data and 'temperature' in data and 'humidity' in data:
+            latest_data = data
+            print("Received data:", data)
+            return "Data received!", 200
+        else:
+            print("Invalid data received")
+            return "Invalid data", 400
     except Exception as e:
-       print("Error receiving data:", e)
-       return "Error", 500
+        print("Error receiving data:", e)
+        return "Error", 500
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
 
 # Пояснения Flask:
 
