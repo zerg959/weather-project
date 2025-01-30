@@ -42,7 +42,7 @@ def receive_data():
         if data and 'temperature' in data and 'humidity' in data:
             latest_data = data
             print("Received data:", data)
-            timestamp_str = datetime.fromtimestamp(int(time.time())).strftime('%Y-%m-%d %H:%M:%S')
+            timestamp_str = datetime.fromtimestamp(int(time.time())).strftime('%H:%M:%S %d-%m-%y')
             conn = get_db_connection()
             conn.execute("INSERT INTO sensor_data (temperature, humidity, timestamp) VALUES (?, ?, ?)",
                         (data['temperature'], data['humidity'], timestamp_str))
